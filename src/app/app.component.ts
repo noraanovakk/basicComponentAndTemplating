@@ -11,6 +11,7 @@ export class AppComponent {
   show = true;
   klikkeljukbe = false;
   inputContent = 'valami, meg valami, haha';
+   homeWorkEvents = ['yellow', 'blue', 'red', 'green'];
 
   pipeDemo = [
     {
@@ -24,6 +25,21 @@ export class AppComponent {
     {
       'id': 3,
       'name': 'Balu'
+    }
+  ];
+
+  homeWorkPipe = [
+    {
+      'id' : 1,
+      'name' : 'first',
+    },
+    {
+      'id': 2,
+      'name' : 'second',
+    },
+    {
+      'id' : 3,
+      'name' : 'third',
     }
   ];
 

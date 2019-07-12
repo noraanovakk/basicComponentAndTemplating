@@ -12,6 +12,14 @@
   <li *ngFor="let event of events">{{ event }}</li>
 </ul>
 
+<hr>
+  {{homeWorkPipe | json | uppercase }}
+<hr>
+
+<ul>
+  <li *ngFor="let homeWorkEvent of homeWorkEvents"> {{ homeWorkEvent }} </li>
+</ul>
+
 <input type="text" [(ngModel)]="inputContent">
 <div>
   {{inputContent}}
@@ -20,6 +28,7 @@
 <div *ngIf="show">
   <p>Nov No</p>
 </div>
+
 
 <div [ngClass]="{ 'valami' : show}">
   <p>ngClass demo</p>
