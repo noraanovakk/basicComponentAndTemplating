@@ -1,6 +1,13 @@
 <p>hello World</p>
 <app-event></app-event>
 
+<hr>
+  {{ title | uppercase }}
+<hr>
+{{ pipeDemo | json}}
+<hr>
+
+
 <ul>
   <li *ngFor="let event of events">{{ event }}</li>
 </ul>

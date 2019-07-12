@@ -12,6 +12,21 @@ export class AppComponent {
   klikkeljukbe = false;
   inputContent = 'valami, meg valami, haha';
 
+  pipeDemo = [
+    {
+      'id': 1,
+      'name': 'puffancs'
+    },
+    {
+      'id': 2,
+      'name': 'Toj'
+    },
+    {
+      'id': 3,
+      'name': 'Balu'
+    }
+  ];
+
   toggle(){
     this.show = !this.show;
   }
