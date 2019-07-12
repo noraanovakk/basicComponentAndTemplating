@@ -1,46 +1,48 @@
-<p>hello World</p>
-<app-event></app-event>
+<app-listdemo></app-listdemo>
 
-<hr>
-  {{ title | uppercase }}
-<hr>
-{{ pipeDemo | json}}
-<hr>
+<!--<p>hello World</p>-->
+<!--<app-event></app-event>-->
 
-
-<ul>
-  <li *ngFor="let event of events">{{ event }}</li>
-</ul>
-
-<hr>
-  {{homeWorkPipe | json | uppercase }}
-<hr>
-
-<ul>
-  <li *ngFor="let homeWorkEvent of homeWorkEvents"> {{ homeWorkEvent }} </li>
-</ul>
-
-<input type="text" [(ngModel)]="inputContent">
-<div>
-  {{inputContent}}
-</div>
-
-<div *ngIf="show">
-  <p>Nov No</p>
-</div>
+<!--<hr>-->
+<!--  {{ title | uppercase }}-->
+<!--<hr>-->
+<!--{{ pipeDemo | json}}-->
+<!--<hr>-->
 
 
-<div [ngClass]="{ 'valami' : show}">
-  <p>ngClass demo</p>
-</div>
+<!--<ul>-->
+<!--  <li *ngFor="let event of events">{{ event }}</li>-->
+<!--</ul>-->
 
-<button
-  (click)="toggle()"
-  (mouseover)="demo($event)"
-  [disabled]="klikkeljukbe"
->Toggle</button>
+<!--<hr>-->
+<!--  {{homeWorkPipe | json | uppercase }}-->
+<!--<hr>-->
 
-<app-alma ></app-alma>
-<app-alma ></app-alma>
-<app-alma ></app-alma>
-<app-alma ></app-alma>
+<!--<ul>-->
+<!--  <li *ngFor="let homeWorkEvent of homeWorkEvents"> {{ homeWorkEvent }} </li>-->
+<!--</ul>-->
+
+<!--<input type="text" [(ngModel)]="inputContent">-->
+<!--<div>-->
+<!--  {{inputContent}}-->
+<!--</div>-->
+
+<!--<div *ngIf="show">-->
+<!--  <p>Nov No</p>-->
+<!--</div>-->
+
+
+<!--<div [ngClass]="{ 'valami' : show}">-->
+<!--  <p>ngClass demo</p>-->
+<!--</div>-->
+
+<!--<button-->
+<!--  (click)="toggle()"-->
+<!--  (mouseover)="demo($event)"-->
+<!--  [disabled]="klikkeljukbe"-->
+<!--&gt;Toggle</button>-->
+
+<!--<app-alma ></app-alma>-->
+<!--<app-alma ></app-alma>-->
+<!--<app-alma ></app-alma>-->
+<!--<app-alma ></app-alma>-->
