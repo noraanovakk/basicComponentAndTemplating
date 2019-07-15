@@ -8,6 +8,7 @@ import { EventModel } from './event-model';
 })
 export class ListdemoComponent {
   events: EventModel[];
+  modifyEvent: EventModel;
 
   constructor() {
     this.events = [
@@ -37,6 +38,7 @@ export class ListdemoComponent {
 //    });
 
 //    console.log(puf)
+  this.modifyEvent = new EventModel('');
    }
 
 // ebben az esetben azokra szűr rá, tehát nem töröl!, akinek nem egyezik az id-ja
@@ -44,12 +46,34 @@ export class ListdemoComponent {
     this.events = this.events.filter((ev : EventModel) => ev.id !== id);
   }
 
-  add(newEventNameInput: HTMLInputElement){
-    const maxId = this.events.reduce((x, y) => x.id > y.id ? x : y).id;
-    this.events = [...this.events, new EventModel(maxId+1, newEventNameInput.value)];
-    console.log(maxId+1);
+  save(newEventNameInput: HTMLInputElement, newEventPicInput: HTMLInputElement){
+    if(this.modifyEvent.id === 0){
+      // itt tudjuk, hogy új elemet akarunk létrehozni, hiszen biztosítjuk
+      // mindenhol máshol, hogy ha nem szerkeztünk, akor id 0 legyen
+      const maxId = this.events.reduce((x, y) => x.id > y.id ? x : y).id;
+      this.events = [...this.events, new EventModel(newEventNameInput.value, maxId+1, newEventPicInput.value)];
+      // itt tudjuk, hogy edit szakasz van, azaz meg kell keresni a megfelelő elemet id alapján
+      } else {
+        this.events = this.events.map((ev) => {
+          if (ev.id === this.modifyEvent.id) {
+            return {
+              id: ev.id,
+              name: newEventNameInput.value,
+              pic: newEventPicInput.value
+            };
+          } else {
+            return ev;
+          }
+        });
+        // pucoljuk ki, ami már nem kell
+        this.modifyEvent = new EventModel('');
+    }
     newEventNameInput.value = '';
+    newEventPicInput.value = '';
+  }
 
+  edit(id: number){
+    this.modifyEvent = this.events.filter((ev) => ev.id === id)[0];
   }
 
   ngOnInit() {
