@@ -7,6 +7,7 @@ import { AlmaComponent } from './alma/alma.component';
 import { EventComponent } from './event/event.component';
 import { FormsModule } from '@angular/forms';
 import { ListdemoComponent } from './listdemo/listdemo.component';
+import { MypipePipe } from './listdemo/mypipe.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ListdemoComponent } from './listdemo/listdemo.component';
     AlmaComponent,
     EventComponent,
     ListdemoComponent,
+    MypipePipe,
   ],
   imports: [
     BrowserModule,
