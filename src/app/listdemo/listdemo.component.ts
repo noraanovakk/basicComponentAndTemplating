@@ -1,18 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export class EventModel{
-  id: number;
-  name: string;
-  pic?: string;
-
-
-  constructor(id, name, pic = '') {
-  // Object.assign(this, param)
-    this.id = id;
-    this.name = name;
-    this.pic = pic;
-   }
-}
+import { EventModel } from './event-model';
 
 @Component({
   selector: 'app-listdemo',
@@ -40,6 +27,16 @@ export class ListdemoComponent {
         pic: 'http://rockmaraton.hu/media/images/2018/rockmaraton-2018-og-hu.jpg'
       }
     ]
+//    const puf = this.events.reduce((x: EventModel, y: EventModel) => {
+//      return x.id > y.id ? x : y;
+//      if (x.id > y.id) {
+//        return x;
+//      } else {
+//        return y;
+//      }
+//    });
+
+//    console.log(puf)
    }
 
 // ebben az esetben azokra szűr rá, tehát nem töröl!, akinek nem egyezik az id-ja
@@ -48,8 +45,11 @@ export class ListdemoComponent {
   }
 
   add(newEventNameInput: HTMLInputElement){
-    this.events = [...this.events, new EventModel(5, newEventNameInput.value)];
-    newEventInput.value = '';
+    const maxId = this.events.reduce((x, y) => x.id > y.id ? x : y).id;
+    this.events = [...this.events, new EventModel(maxId+1, newEventNameInput.value)];
+    console.log(maxId+1);
+    newEventNameInput.value = '';
+
   }
 
   ngOnInit() {
